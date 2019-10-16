@@ -1,0 +1,14 @@
+version: '3'
+services:
+  api:
+    container_name: api
+    build:
+      context: .
+      dockerfile: .docker/api/Dockerfile
+    environment:
+      - ENVIRONMENT
+    volumes:
+      - ./app.py:/app/app.py
+    ports:
+      - "5000:5000"
+    tty: true
